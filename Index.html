@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAK DAN KEWAJIBAN SEBAGAI WARGA NEGARA</title>
+    <style>
+        :root {
+            --red: #ce1126;
+            --white: #ffffff;
+            --gold: #f1c40f;
+            --dark: #1e1e1e;
+            --border: 4px solid #1e1e1e;
+            --shadow: 8px 8px 0px #1e1e1e;
+        }
+
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #dcdde1;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            background: #fdfaf0;
+            border: var(--border);
+            box-shadow: var(--shadow);
+            padding: 30px;
+        }
+
+        .screen { display: none; }
+        .active { display: block !important; }
+
+        header {
+            background: var(--red);
+            color: white;
+            padding: 15px;
+            border: var(--border);
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 15px;
+            border: var(--border);
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            font-family: inherit;
+        }
+
+        .btn {
+            background: var(--gold);
+            border: var(--border);
+            padding: 15px 20px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 4px 4px 0px #1e1e1e;
+            width: 100%;
+            font-size: 1.1rem;
+            margin: 10px 0;
+            text-transform: uppercase;
+        }
+
+        .btn:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0px #1e1e1e; }
+
+        .item { 
+            background: #fff; border: 2px solid #1e1e1e; 
+            padding: 12px; margin-bottom: 10px; box-shadow: 4px 4px 0px #1e1e1e;
+        }
+
+        .warning-zone {
+            background: #ff7675; border: var(--border);
+            padding: 20px; margin-top: 30px;
+        }
+
+        .quiz-opt {
+            background: #fff; border: 2px solid #1e1e1e;
+            padding: 12px; margin: 8px 0; cursor: pointer; font-weight: bold;
+        }
+
+        .quiz-opt:hover { background: #74b9ff; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div id="p1" class="screen active">
+        <header><h1>HAK DAN KEWAJIBAN WARGA NEGARA</h1></header>
+        <p>Masukkan Nama Anda untuk Memulai:</p>
+        <input type="text" id="nameInput" placeholder="NAMA LENGKAP...">
+        <button class="btn" onclick="startApp()"> Ayo cari tahu</button>
+    </div>
+
+    <div id="p2" class="screen">
+        <header><h1 id="welcomeUser">Apa yang ingin kamu ketahui</h1></header>
+        <h3 style="text-align:center;">PILIH MATERI:</h3>
+        <button class="btn" onclick="showPage('p-hak')">➔ HAK WARGA NEGARA</button>
+        <button class="btn" onclick="showPage('p-kewajiban')">➔ KEWAJIBAN WARGA NEGARA</button>
+        <button class="btn" onclick="initQuiz()" style="background: #55efc4;">➔ MULAI KUIS (10 SOAL)</button>
+    </div>
+
+   <div id="p-hak" class="screen">
+        <header><h1>HAK WARGA NEGARA</h1></header>
+        <div class="item">1. Hak atas pekerjaan & penghidupan layak (Pasal 27).
+		<p> Hak ini bukan berarti negara wajib memberi "kursi jabatan" secara instan kepada setiap orang, 
+		melainkan negara wajib menciptakan ekosistem di mana setiap orang memiliki kesempatan yang sama untuk 
+		bekerja.</p></div>
+        <div class="item">2. Hak untuk hidup & mempertahankan kehidupan.
+		<p>Hak untuk hidup & mempertahankan kehidupan (Pasal 28A UUD 1945) adalah hak asasi paling dasar yang tidak boleh 
+		dikurangi dalam keadaan apa pun. Hak untuk Hidup adalah Hak setiap individu untuk ada secara fisik dan 
+		nyawanya tidak boleh dirampas secara sewenang-wenang oleh siapa pun, termasuk negara. sedangkan
+        Hak Mempertahankan Kehidupan ialah Hak untuk mendapatkan sarana agar tetap bisa hidup, seperti akses terhadap pangan (nutrisi), 
+        layanan kesehatan, dan lingkungan yang sehat.</p></div>
+        <div class="item">3. Hak membentuk keluarga melalui perkawinan sah.
+		<p> Hak ini menjamin bahwa setiap individu memiliki kebebasan untuk memilih pasangan hidupnya tanpa paksaan.</p></div>
+        <div class="item">4. Hak atas kelangsungan hidup & perlindungan anak.
+		<p> Hak untuk tetap hidup sejak dalam kandungan hingga lahir. Ini termasuk hak atas kesehatan dan akses medis
+		(seperti imunisasi dan layanan puskesmas).Dan seperti hak mendapatkan Makan Bergizi Gratis (MBG) untuk mencegah stunting.</p></div>
+        <div class="item">5. Hak mengembangkan diri melalui pendidikan.
+		<p> Hak mengembangkan diri melalui pendidikan (Pasal 28C ayat 1 UUD 1945) adalah hak setiap warga negara
+		untuk meningkatkan kualitas hidupnya demi kesejahteraan diri dan kemajuan bangsa.Sebagai bentuk nyata dari Hak Mengembangkan Diri 
+		melalui Pendidikan, pemerintah Indonesia menjalankan program 
+		bantuan biaya pendidikan agar kendala ekonomi tidak menghalangi hak warga negara. </p></div>
+        <div class="item">6. Hak pengakuan hukum yang adil & sama.
+		<p>Artinya, hukum tidak boleh memandang kasta, jabatan, kekayaan, atau agama. Jika seorang pejabat dan rakyat biasa melakukan kesalahan yang sama, 
+		maka prosedur hukum yang dijalani harus sama. Tidak ada orang yang kebal hukum</p></div>
+        <div class="item">7. Hak memeluk agama & beribadah (Pasal 29).
+		<p>Hak memeluk agama dan beribadah adalah hak asasi yang bersifat sangat pribadi dan paling mendasar, karena menyangkut hubungan manusia dengan Tuhan.
+		Di Indonesia, hak ini dijamin dengan sangat kuat karena merupakan amanat dari sila pertama Pancasila.</p></div>
+        <div class="item">8. Hak atas kebebasan berpendapat.
+		<p>Hak ini mencakup kebebasan untuk mencari, menerima, dan menyampaikan informasi serta ide melalui media apa pun 
+		(lisan, tulisan, media sosial, atau unjuk rasa)kebebasan berpendapat adalah hak yang boleh dibatasi oleh undang-undang demi menghormati hak orang lain.
+		Anda bebas bicara dan mengkritik, asalkan tidak melanggar privasi orang lain, tidak menyebar hoaks, dan tidak memicu kerusuhan.</p></div>
+        <div class="item">9. Hak atas rasa aman & perlindungan.
+		<p>Hak atas rasa aman dan perlindungan secara mendalam mencakup perlindungan terhadap fisik, psikis, hingga martabat seseorang. Di dalam Pasal 28G ayat 
+		(1) UUD 1945, isi hak ini dibagi menjadi empat pilar utama:Perlindungan Diri Pribadi, Perlindungan Keluarga, Perlindungan Kehormatan dan Martabat dan
+		Perlindungan Harta Benda</p></div>
+        <div class="item">10. Hak jaminan sosial & kesejahteraan.
+		<p>Hak atas jaminan sosial dan kesejahteraan adalah komitmen negara untuk memastikan tidak ada warga negara yang telantar saat menghadapi risiko sosial atau ekonomi.</p></div>
+        <div class="warning-zone">
+            <strong>AKIBAT HAK TIDAK DIDAPATKAN:</strong>
+            <p>Hak adalah fondasi martabat manusia. Jika hak-hak tersebut tidak terpenuhi, negara tidak hanya gagal menjalankan amanat konstitusi (UUD 1945), tetapi juga membahayakan keberlangsungan hidup bangsa itu sendiri. Negara yang kuat adalah negara yang berhasil menjamin hak-hak rakyatnya terpenuhi secara adil.</p>
+        </div>
+        <button class="btn" onclick="showPage('p2')">KEMBALI</button>
+    </div>
+
+    <div id="p-kewajiban" class="screen">
+        <header><h1>KEWAJIBAN</h1></header>
+        <div class="item">1. Wajib menjunjung hukum & pemerintahan.
+		<p>Wajib menjunjung hukum dan pemerintahan adalah fondasi agar sebuah negara tidak jatuh ke dalam anarki (kekacauan). 
+		Tanpa kepatuhan warga negara, hukum hanyalah coretan kertas dan pemerintah tidak akan bisa bekerja melayani rakyat.</p></div>
+        <div class="item">2. Wajib ikut serta dalam upaya bela negara.
+		<p></p> Wajib ikut serta dalam upaya bela negara adalah komitmen timbal balik antara warga negara dan tanah airnya untuk
+		menjamin kelangsungan hidup bangsa.Bela negara adalah investasi keamanan. Dengan ikut serta membela negara, kita sebenarnya sedang melindungi hak-hak kita sendiri dan masa depan generasi
+		mendatang agar tetap hidup dalam negara yang merdeka dan berdaulat. hal yang bisa dilakukan seperti membeli produk lokal</div>
+        <div class="item">3. Wajib menghormati HAM orang lain.
+		<p>Kewajiban ini mengingatkan kita bahwa kebebasan yang kita miliki tidaklah mutlak. Kebebasan kita berakhir di saat kebebasan orang lain dimulai.
+
+Contoh: Anda memiliki hak untuk menyalakan musik (kebebasan berekspresi), tetapi Anda wajib menghormati hak tetangga untuk istirahat dengan tenang (hak atas rasa aman dan nyaman).</p></div>
+        <div class="item">4. Wajib ikut dalam pertahanan & keamanan negara.
+		<p>Wajib ikut dalam pertahanan dan keamanan adalah bentuk nyata sinergi antara rakyat dan aparat. Tujuannya agar negara tetap stabil, aman, dan kondusif,
+		sehingga kita semua bisa menjalankan aktivitas sehari-hari tanpa rasa takut.Tanpa dukungan rakyat, kekuatan militer sekuat apa pun akan sulit bertahan. Partisipasi warga negara
+		menciptakan Ketahanan Nasional yang tangguh, sehingga negara tidak mudah digoyang oleh konflik internal maupun tekanan eksternal.</p></div>
+        <div class="item">5. Wajib membayar pajak (pembangunan).
+		<p>Membayar pajak adalah wujud nyata gotong royong berskala nasional. Dengan membayar pajak, kita tidak hanya menunaikan kewajiban hukum, tetapi juga berkontribusi langsung pada 
+		kemajuan dan kemandirian bangsa agar tidak tergantung pada utang luar negeri.</p></div>
+        <div class="item">6. Wajib mengikuti pendidikan dasar.
+		<p>Wajib mengikuti pendidikan dasar adalah cara negara menjamin bahwa tidak ada anak yang tertinggal. Dengan bersekolah, Anda tidak hanya memenuhi kewajiban hukum,
+		tetapi juga membuka pintu menuju kehidupan yang lebih bermartabat.</p></div>
+        <div class="item">7. Wajib menjaga kelestarian lingkungan.
+		<p>Lingkungan bukan sekadar pemandangan, melainkan penyedia sumber daya vital seperti air bersih, udara segar,
+		dan pangan. Menjaga lingkungan berarti menjaga sistem pendukung kehidupan kita sendiri.</p></div>
+        <div class="item">8. Wajib menjaga fasilitas umum (Anti-Vandalisme).
+		<p>Menjaga fasilitas umum adalah standar paling dasar dari adab warga negara. Dengan merawat apa yang sudah dibangun,
+		kita memastikan bahwa kemajuan infrastruktur dapat dinikmati oleh semua orang dalam jangka waktu yang lama.</p></div>
+        <div class="item">9. Wajib menjaga persatuan bangsa (Bhineka Tunggal Ika).
+		<p>Dengan banyaknya agama, budaya dan ras yang ada indonesia kita harus mempunyai sifat saling menghormati dan menghargai. Menjadi warga negara yang baik bukan hanya soal menuntut apa yang menjadi hak kita, tetapi tentang kesadaran bahwa kebebasan kita dibatasi oleh aturan dan hak orang lain. Dengan menjalankan kewajiban secara bertanggung jawab, kita sebenarnya sedang memproteksi masa depan kita sendiri dan generasi mendatang.</p></div>
+        <div class="warning-zone" style="background: #ffeaa7;">
+            <strong>AKIBAT KEWAJIBAN DIINGKARI:</strong>
+            <p>Menjalankan kewajiban bukan sekadar "beban", melainkan investasi agar hak-hak kita sebagai individu tetap terlindungi. Jika kewajiban diabaikan, 
+			masyarakat akan kembali ke "hukum rimba" di mana yang kuat menindas yang lemah, dan keadilan tidak lagi ada.</p>
+        </div>
+        <button class="btn" onclick="showPage('p2')">KEMBALI</button>
+    </div>
+
+    <div id="p-quiz" class="screen">
+        <header><h1>KUIS</h1></header>
+        <div id="quiz-content">
+            <p id="q-count">Soal 1/10</p>
+            <h3 id="q-text">Pertanyaan...</h3>
+            <div id="q-options"></div>
+        </div>
+        <div id="quiz-result" style="display:none; text-align:center;">
+            <h2 id="final-score">Skor: 0</h2>
+            <button class="btn" onclick="showPage('p2')">MENU UTAMA</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    let userName = "";
+    let score = 0;
+    let currentIdx = 0;
+
+    const quizData = [
+        { q: "Setiap warga negara berhak atas pendidikan (Pasal 31). Ini adalah contoh...", a: "Hak", b: "Kewajiban", c: "Beban", d: "Hobi", k: "a" },
+        { q: "Membayar pajak adalah contoh...", a: "Hak", b: "Kewajiban", c: "Pilihan", d: "Hadiah", k: "b" },
+        { q: "Jika seorang pejabat dan rakyat biasa melakukan kesalahan yang sama, maka prosedur hukum yang dijalani harus...", a: "Seadil- adilnya", b: "Dirayakan", c: "Dimaafkan", d: "Dimaklumkan", k: "a" },
+        { q: "Kesamaan di depan hukum merupakan salah satu...", a: "Hak", b: "Kewajiban", c: "Larangan", d: "Tugas", k: "a" },
+        { q: "Merusak fasilitas umum adalah bentuk...", a: "Pemenuhan Hak", b: "Pengingkaran Kewajiban", c: "Bela Negara", d: "Keadilan", k: "b" },
+        { q: "Bebas memeluk agama adalah Pasal...", a: "27", b: "28", c: "29", d: "30", k: "c" },
+        { q: "Wajib mengikuti pendidikan dasar bagi warga negara diatur dalam Pasal...", a: "31 Ayat 2", b: "32", c: "33", d: "34", k: "a" },
+        { q: "Tragedi kemanusiaan terjadi jika negara gagal menjamin...", a: "Pajak", b: "Hak Hidup", c: "Hobi", d: "Kekayaan", k: "b" },
+        { q: "Hak atas rasa aman dan perlindungan secara mendalam mencakup perlindungan terhadap fisik, psikis, hingga martabat seseorang.Di dalam Pasal 28G ayat (1) UUD 1945, isi hak ini dibagi menjadi empat pilar utama kecuali", a: "Perlindungan hewan", b: "Perlindungan Keluarga", c: "Perlindungan Kehormatan dan Martabat", d: "Perlindungan Harta Benda", k: "a" },
+        { q: "Tujuan membayar pajak bagi negara adalah...", a: "Kekayaan Pejabat", b: "Pembangunan Nasional", c: "Mengurangi Rakyat", d: "Buat lahan sawit", k: "b" }
+    ];
+
+    function showPage(id) {
+        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+        document.getElementById(id).classList.add('active');
+    }
+
+    function startApp() {
+        const input = document.getElementById('nameInput').value;
+        if(input.trim() === "") {
+            alert("Harap masukkan nama!");
+            return;
+        }
+        userName = input;
+        document.getElementById('welcomeUser').innerText = " HALO " + userName.toUpperCase();
+        showPage('p2');
+    }
+
+    function initQuiz() {
+        score = 0; currentIdx = 0;
+        document.getElementById('quiz-result').style.display = 'none';
+        document.getElementById('quiz-content').style.display = 'block';
+        loadQ();
+        showPage('p-quiz');
+    }
+
+    function loadQ() {
+        const cur = quizData[currentIdx];
+        document.getElementById('q-count').innerText = `Soal ${currentIdx + 1} / 10`;
+        document.getElementById('q-text').innerText = cur.q;
+        document.getElementById('q-options').innerHTML = `
+            <div class="quiz-opt" onclick="check('a')">A. ${cur.a}</div>
+            <div class="quiz-opt" onclick="check('b')">B. ${cur.b}</div>
+            <div class="quiz-opt" onclick="check('c')">C. ${cur.c}</div>
+            <div class="quiz-opt" onclick="check('d')">D. ${cur.d}</div>
+        `;
+    }
+
+    function check(ans) {
+        if(ans === quizData[currentIdx].k) score += 10;
+        currentIdx++;
+        if(currentIdx < quizData.length) loadQ();
+        else {
+            document.getElementById('quiz-content').style.display = 'none';
+            document.getElementById('quiz-result').style.display = 'block';
+            document.getElementById('final-score').innerText = `${userName}, SKOR ANDA: ${score}`;
+        }
+    }
+</script>
+
+</body>
+</html>
